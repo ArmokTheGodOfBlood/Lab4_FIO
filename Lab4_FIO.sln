@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33815.320
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "Tests\Tests.csproj", "{063BD002-5D3C-4A0D-BA99-EDEFC19C02B9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassLibrary", "ClassLibrary\ClassLibrary.csproj", "{4F5AC690-9A6F-47DB-8158-894AF8842A0E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "starter", "starter\starter.csproj", "{646527FB-5B6A-4031-9336-3DC8EA6E2ABF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{063BD002-5D3C-4A0D-BA99-EDEFC19C02B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{063BD002-5D3C-4A0D-BA99-EDEFC19C02B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{063BD002-5D3C-4A0D-BA99-EDEFC19C02B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{063BD002-5D3C-4A0D-BA99-EDEFC19C02B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F5AC690-9A6F-47DB-8158-894AF8842A0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F5AC690-9A6F-47DB-8158-894AF8842A0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F5AC690-9A6F-47DB-8158-894AF8842A0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F5AC690-9A6F-47DB-8158-894AF8842A0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{646527FB-5B6A-4031-9336-3DC8EA6E2ABF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{646527FB-5B6A-4031-9336-3DC8EA6E2ABF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{646527FB-5B6A-4031-9336-3DC8EA6E2ABF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{646527FB-5B6A-4031-9336-3DC8EA6E2ABF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {821AD064-2DCA-403C-B07A-09A6151448FD}
+	EndGlobalSection
+EndGlobal
