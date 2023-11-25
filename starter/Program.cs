@@ -1,4 +1,5 @@
 ﻿using ClassLibrary;
+using DbInteraction;
 
 internal class Program
 {
@@ -8,6 +9,7 @@ internal class Program
         foreach (var item in v)
         {
             Console.WriteLine(item.Title);
+            DbInteraction.DbHandler.Article.Insert(item);
         }
 }
 }

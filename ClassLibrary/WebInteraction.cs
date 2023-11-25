@@ -1,12 +1,7 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static ClassLibrary.Entities;
+using System.Text.RegularExpressions;
+using static DbInteraction.Entities;
 
 namespace ClassLibrary
 {
@@ -16,15 +11,31 @@ namespace ClassLibrary
         
         public static Article[] getArticles()
         {
-            driver.Navigate().GoToUrl("https://habr.com/ru/flows/develop/articles/");
+            driver.Navigate().GoToUrl($"https://chuck.dfwk.ru/");
 
             List<Article> articles = new List<Article>();
-            IReadOnlyCollection<IWebElement> webElements = driver.FindElements(By.ClassName("tm-articles-list__item"));
-            foreach (var item in webElements)
+            IWebElement articleList = driver.FindElement(By.Id("delform"));
+            IReadOnlyCollection<IWebElement> articlesWeb = articleList.FindElements(By.TagName("div"));
+            Regex regex = new Regex(@"thread(\w*)");
+            foreach (var item in articlesWeb)
             {
-                string username = item.FindElement(By.ClassName("tm-user-info__username")).Text;
-                string title = item.FindElement(By.ClassName("tm-title__link")).FindElement(By.TagName("span")).Text;
-                    articles.Add(new Article() { Title = title, Author = username });
+                string id = item.GetAttribute("id");
+                if (regex.Match(id).Success)
+                {
+                    string title = "";
+                    try
+                    {
+                        title = item.FindElement(By.ClassName("filetitle")).Text;
+                    }
+                    catch (Exception)
+                    {
+
+                    }
+                    string no = item.FindElements(By.ClassName("reflink"))[item.FindElements(By.ClassName("reflink")).Count - 1].Text;
+                    string contentHtml = item.FindElement(By.TagName("blockquote")).Text;
+
+                    articles.Add(new Article() {ForumId = id, Title = title, No = no, Content = contentHtml });
+                }
             }
             driver.Quit();
             return articles.ToArray();
